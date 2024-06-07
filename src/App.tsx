@@ -1,33 +1,50 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import Modal from "./components/modal/Modal";
+import { ModalIDs, useModalStore } from "./slices/modalStore";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { modalID, openModal, closeModal } = useModalStore();
+
+  const handleModalTrigger = (event) => {
+    const { modal } = event.target.dataset;
+    if (modal) {
+      openModal(modal as ModalIDs);
+    }
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Modal Challenge</h1>
+
+      <Modal
+        id={ModalIDs.MODAL_A}
+        showModal={modalID === ModalIDs.MODAL_A}
+        title="AAAAA"
+      >
+        <p>Modal A content</p>
+      </Modal>
+      <Modal
+        id={ModalIDs.MODAL_B}
+        showModal={modalID === ModalIDs.MODAL_B}
+        title="BBBBB"
+      >
+        <p>Modal B content</p>
+      </Modal>
+
+      <button
+        onClick={handleModalTrigger}
+        data-modal={ModalIDs.MODAL_A}
+        type="button"
+      >
+        open A
+      </button>
+      <button
+        onClick={handleModalTrigger}
+        data-modal={ModalIDs.MODAL_B}
+        type="button"
+      >
+        open B
+      </button>
     </>
   );
 }

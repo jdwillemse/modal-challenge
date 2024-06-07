@@ -6,6 +6,8 @@
 - https://shoptalkshow.com/552/
 - https://www.scottohara.me/blog/2023/01/26/use-the-dialog-element.html
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+- https://dev.to/iam_timsmith/dialogs-vs-modals-is-there-a-difference-210k
+- https://stackoverflow.com/questions/43186545/header-footer-or-main-element-inside-dialog-element-in-html5
 
 ---
 
