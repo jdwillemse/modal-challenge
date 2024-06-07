@@ -1,50 +1,51 @@
+import { FC, SyntheticEvent, useCallback } from "react";
+
 import "./App.css";
-import Modal from "./components/modal/Modal";
 import { ModalIDs, useModalStore } from "./slices/modalStore";
+import ContentModalBrief from "./components/contentModalBrief/ContentModalBrief";
+import ContentModalSemantic from "./components/contentModalSemantic/ContentModalSemantic";
 
-function App() {
-  const { modalID, openModal, closeModal } = useModalStore();
-
-  const handleModalTrigger = (event) => {
-    const { modal } = event.target.dataset;
-    if (modal) {
-      openModal(modal as ModalIDs);
-    }
-  };
+function App(): ReturnType<FC> {
+  const openModal = useModalStore.getState().openModal;
+  const handleModalTrigger = useCallback(
+    (event: SyntheticEvent<HTMLButtonElement>) => {
+      const { modalId } = event.currentTarget.dataset;
+      if (modalId) {
+        openModal(modalId as ModalIDs);
+      }
+    },
+    []
+  );
 
   return (
     <>
       <h1>Modal Challenge</h1>
-
-      <Modal
-        id={ModalIDs.MODAL_A}
-        showModal={modalID === ModalIDs.MODAL_A}
-        title="AAAAA"
-      >
-        <p>Modal A content</p>
-      </Modal>
-      <Modal
-        id={ModalIDs.MODAL_B}
-        showModal={modalID === ModalIDs.MODAL_B}
-        title="BBBBB"
-      >
-        <p>Modal B content</p>
-      </Modal>
+      <p>
+        I've created two modals with slightly different markup. The one
+        represents markup that literally interprets the wording of the brief.
+        The second one implements more semantic markup. As I was not able to
+        discuss the brief with the stakeholders I do not understand the
+        intention behind the wording. With this in mind I want to cover my bases
+        and present both implementations.
+      </p>
 
       <button
         onClick={handleModalTrigger}
-        data-modal={ModalIDs.MODAL_A}
+        data-modal-id={ModalIDs.ModalBrief}
         type="button"
       >
-        open A
+        Briefed
       </button>
       <button
         onClick={handleModalTrigger}
-        data-modal={ModalIDs.MODAL_B}
+        data-modal-id={ModalIDs.ModalSemantic}
         type="button"
       >
-        open B
+        Semantic
       </button>
+
+      <ContentModalBrief />
+      <ContentModalSemantic />
     </>
   );
 }

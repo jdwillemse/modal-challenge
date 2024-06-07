@@ -8,5 +8,10 @@
 }
 
 .wrapper {
-  background: #000;
+  background: #f00;
+  padding: 1px;
+}
+
+.title {
+  margin-top: 0;
 }

@@ -1,18 +1,18 @@
 import { create } from "zustand";
 
 export enum ModalIDs {
-  MODAL_A = "modalA",
-  MODAL_B = "modalB",
+  ModalBrief = "MODAL_BRIEF",
+  ModalSemantic = "MODAL_SEMANTIC",
 }
 
 interface ModalStore {
-  modalID: null | ModalIDs;
+  activeModalID: null | ModalIDs;
   openModal: (id: ModalIDs) => void;
   closeModal: () => void;
 }
 
 export const useModalStore = create<ModalStore>()((set) => ({
-  modalID: null,
-  openModal: (id) => set({ modalID: id }),
-  closeModal: () => set({ modalID: null }),
+  activeModalID: null,
+  openModal: (id) => set({ activeModalID: id }),
+  closeModal: () => set({ activeModalID: null }),
 }));

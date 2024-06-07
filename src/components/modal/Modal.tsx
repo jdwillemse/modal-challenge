@@ -1,4 +1,4 @@
-import {
+import React, {
   ReactNode,
   SyntheticEvent,
   useCallback,
@@ -9,23 +9,26 @@ import { createPortal } from "react-dom";
 
 import css from "./modal.module.css";
 import { useModalStore } from "../../slices/modalStore";
+import Briefed from "./Briefed";
+import Semantic from "./Semantic";
 
-interface ModalProps {
+export interface ModalProps {
   id: string;
   title: string;
-  showModal: boolean;
   children: ReactNode;
+  semantic?: boolean;
 }
 
-function Modal({ id, title, showModal, children }: ModalProps): ReactNode {
+function Modal({ id, semantic, ...props }: ModalProps): ReactNode {
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const { closeModal } = useModalStore();
+  const { activeModalID, closeModal } = useModalStore();
+  const showModal = activeModalID === id;
+
   const handleDialogClick = useCallback((event: SyntheticEvent) => {
     if (event.target === dialogRef.current) {
       closeModal();
     }
   }, []);
-  console.log(dialogRef.current, title);
 
   useEffect(() => {
     if (dialogRef.current && showModal) {
@@ -47,13 +50,11 @@ function Modal({ id, title, showModal, children }: ModalProps): ReactNode {
       aria-labelledby={`${id}-title`}
       onClick={handleDialogClick}
     >
-      <div className={css.wrapper}>
-        <h2 id={`${id}-title`}>{title}</h2>
-        {children}
-        <button onClick={closeModal} aria-label="Close Modal">
-          Close Me
-        </button>
-      </div>
+      {semantic ? (
+        <Semantic id={id} {...props} />
+      ) : (
+        <Briefed id={id} {...props} />
+      )}
     </dialog>,
     document.body // This is an element outside the normal hierarchy
   );
