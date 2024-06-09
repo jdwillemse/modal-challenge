@@ -1,0 +1,56 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`modal > should render with namespaced structure 1`] = `
+<dialog
+  aria-labelledby="modalTitle"
+  aria-modal="true"
+  class="modal"
+  open=""
+>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="header"
+    >
+      <div
+        class="titleWrapper"
+        id="modalTitle"
+      >
+        <h2>
+          Header
+        </h2>
+      </div>
+    </div>
+    <div
+      class="body"
+    >
+      <p>
+        Body
+      </p>
+    </div>
+    <div
+      class="footer"
+    >
+      <span>
+        Footer
+      </span>
+    </div>
+  </div>
+</dialog>
+`;
+
+exports[`modal > should render with simple structure 1`] = `
+<dialog
+  aria-labelledby="modalTitle"
+  aria-modal="true"
+  class="modal"
+  open=""
+>
+  <div
+    class="wrapper"
+  >
+    Simple modal
+  </div>
+</dialog>
+`;

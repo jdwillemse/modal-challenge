@@ -2,14 +2,13 @@ import { FC, FormEvent, useCallback } from "react";
 
 import css from "./contentModal.module.css";
 import cssModal from "../modal/modal.module.css";
-import Modal from "../modal/Modal";
-import { ModalIDs, useModalStore } from "../../slices/modalStore";
-import CloseButton from "../closeButton/CloseButton";
+import { Modal } from "../Modal";
+import { ModalIDs, useModalStore } from "../../stores/modalStore";
 
 function ContentModal(): ReturnType<FC> {
   const closeModal = useModalStore.getState().closeModal;
-  const briefID = ModalIDs.ModalBrief;
-  const semanticID = ModalIDs.ModalSemantic;
+  const modelB = ModalIDs.ModalB;
+  const ModalA = ModalIDs.ModalA;
   // I include a form since the brief asks for a 'save' button which only makes sense in the context of a form
   const handleSubmit = useCallback(
     (event: FormEvent<HTMLFormElement>) => {
@@ -23,7 +22,7 @@ function ContentModal(): ReturnType<FC> {
 
   return (
     <>
-      <Modal id={briefID}>
+      <Modal id={modelB}>
         <div className={cssModal.header}>
           <h2 className={cssModal.title} id="modalTitle">
             Long text modal
@@ -95,7 +94,7 @@ function ContentModal(): ReturnType<FC> {
         </div>
       </Modal>
 
-      <Modal id={semanticID}>
+      <Modal id={ModalA}>
         <Modal.Header>
           <h2>Semantic Modal</h2>
         </Modal.Header>
@@ -106,7 +105,7 @@ function ContentModal(): ReturnType<FC> {
             vel dui venenatis vulputate.
           </p>
           <form
-            id={`${ModalIDs.ModalSemantic}-form`}
+            id={`${ModalA}-form`}
             method="dialog"
             className={css.form}
             onSubmit={handleSubmit}
@@ -138,7 +137,7 @@ function ContentModal(): ReturnType<FC> {
           <button
             type="submit"
             className={(css.button, css.buttonPrimary)}
-            form={`${semanticID}-form`}
+            form={`${ModalA}-form`}
           >
             Save
           </button>

@@ -1,8 +1,8 @@
 import { create } from "zustand";
 
 export enum ModalIDs {
-  ModalBrief = "MODAL_BRIEF",
-  ModalSemantic = "MODAL_SEMANTIC",
+  ModalA = "MODAL_A",
+  ModalB = "MODAL_B",
 }
 
 interface ModalStore {

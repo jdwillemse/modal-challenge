@@ -1,9 +1,8 @@
 import { FC, SyntheticEvent, useCallback } from "react";
 
 import "./App.css";
-import { ModalIDs, useModalStore } from "./slices/modalStore";
+import { ModalIDs, useModalStore } from "./stores/modalStore";
 import ContentModal from "./components/contentModal/ContentModal";
-import Modal from "./components/modal/Modal";
 
 function App(): ReturnType<FC> {
   const openModal = useModalStore.getState().openModal;
@@ -31,14 +30,14 @@ function App(): ReturnType<FC> {
 
       <button
         onClick={handleModalTrigger}
-        data-modal-id={ModalIDs.ModalSemantic}
+        data-modal-id={ModalIDs.ModalA}
         type="button"
       >
         With form
       </button>
       {/* <button
         onClick={handleModalTrigger}
-        data-modal-id={ModalIDs.ModalBrief}
+        data-modal-id={ModalIDs.ModelB}
         type="button"
       >
         Long text
