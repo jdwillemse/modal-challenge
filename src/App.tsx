@@ -5,7 +5,7 @@ import { ModalIDs, useModalStore } from "./stores/modalStore";
 import ContentModal from "./components/contentModal/ContentModal";
 
 function App(): ReturnType<FC> {
-  const openModal = useModalStore.getState().openModal;
+  const { openModal } = useModalStore.getState();
   const handleModalTrigger = useCallback(
     (event: SyntheticEvent<HTMLButtonElement>) => {
       const { modalId } = event.currentTarget.dataset;

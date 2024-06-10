@@ -1,12 +1,12 @@
 import { FC, FormEvent, useCallback } from "react";
 
 import css from "./contentModal.module.css";
-import cssModal from "../modal/modal.module.css";
+import cssModal from "../Modal/modal.module.css";
 import { Modal } from "../Modal";
 import { ModalIDs, useModalStore } from "../../stores/modalStore";
 
 function ContentModal(): ReturnType<FC> {
-  const closeModal = useModalStore.getState().closeModal;
+  const { closeModal } = useModalStore.getState();
   const modelB = ModalIDs.ModalB;
   const ModalA = ModalIDs.ModalA;
   // I include a form since the brief asks for a 'save' button which only makes sense in the context of a form
@@ -22,6 +22,55 @@ function ContentModal(): ReturnType<FC> {
 
   return (
     <>
+      <Modal id={ModalA}>
+        <Modal.Header>
+          <h2>Semantic Modal</h2>
+        </Modal.Header>
+        <Modal.Body>
+          <p>
+            Nunc eros sem, semper a imperdiet id, laoreet quis est. Sed eget
+            lacus pharetra, viverra felis ac, pellentesque velit. Sed non justo
+            vel dui venenatis vulputate.
+          </p>
+          <form
+            id={`${ModalA}-form`}
+            method="dialog"
+            className={css.form}
+            onSubmit={handleSubmit}
+          >
+            <label>
+              <span>Name</span>
+              <input type="text" autoFocus required />
+            </label>
+          </form>
+          <p>
+            Aenean quis quam at sapien interdum interdum a et orci. Praesent
+            imperdiet erat at diam lobortis condimentum. Pellentesque rhoncus
+            est lorem, sit amet venenatis ligula suscipit eget. Pellentesque
+            semper porttitor turpis, nec congue turpis. Etiam sit amet fringilla
+            sapien, a volutpat odio. Proin tortor enim, convallis a convallis
+            quis, porta quis enim. Donec ac ipsum et tortor vestibulum tristique
+            vitae finibus metus.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <button
+            type="button"
+            className={(css.button, css.buttonSecondary)}
+            onClick={closeModal}
+            aria-label="Close Modal"
+          >
+            Close
+          </button>
+          <button
+            type="submit"
+            className={(css.button, css.buttonPrimary)}
+            form={`${ModalA}-form`}
+          >
+            Save
+          </button>
+        </Modal.Footer>
+      </Modal>
       <Modal id={modelB}>
         <div className={cssModal.header}>
           <h2 className={cssModal.title} id="modalTitle">
@@ -92,56 +141,6 @@ function ContentModal(): ReturnType<FC> {
             Close
           </button>
         </div>
-      </Modal>
-
-      <Modal id={ModalA}>
-        <Modal.Header>
-          <h2>Semantic Modal</h2>
-        </Modal.Header>
-        <Modal.Body>
-          <p>
-            Nunc eros sem, semper a imperdiet id, laoreet quis est. Sed eget
-            lacus pharetra, viverra felis ac, pellentesque velit. Sed non justo
-            vel dui venenatis vulputate.
-          </p>
-          <form
-            id={`${ModalA}-form`}
-            method="dialog"
-            className={css.form}
-            onSubmit={handleSubmit}
-          >
-            <label>
-              <span>Name</span>
-              <input type="text" autoFocus required />
-            </label>
-          </form>
-          <p>
-            Aenean quis quam at sapien interdum interdum a et orci. Praesent
-            imperdiet erat at diam lobortis condimentum. Pellentesque rhoncus
-            est lorem, sit amet venenatis ligula suscipit eget. Pellentesque
-            semper porttitor turpis, nec congue turpis. Etiam sit amet fringilla
-            sapien, a volutpat odio. Proin tortor enim, convallis a convallis
-            quis, porta quis enim. Donec ac ipsum et tortor vestibulum tristique
-            vitae finibus metus.
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <button
-            type="button"
-            className={(css.button, css.buttonSecondary)}
-            onClick={closeModal}
-            aria-label="Close Modal"
-          >
-            Close
-          </button>
-          <button
-            type="submit"
-            className={(css.button, css.buttonPrimary)}
-            form={`${ModalA}-form`}
-          >
-            Save
-          </button>
-        </Modal.Footer>
       </Modal>
     </>
   );

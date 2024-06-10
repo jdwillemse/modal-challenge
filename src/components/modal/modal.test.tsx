@@ -5,6 +5,7 @@ import ModalElement from "./ModalElement";
 
 describe("modal", () => {
   beforeAll(() => {
+    // these functions need to be mocked because jsdom does not currently support HTMLDialogElement
     HTMLDialogElement.prototype.showModal = vi.fn(function mock(
       this: HTMLDialogElement
     ) {
