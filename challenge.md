@@ -6,28 +6,28 @@ Develop a modal component in ReactJS that meets all necessary accessibility spec
 
 ### Modal Structure and Appearance
 
-- [ ] The modal should be implemented as a React component and can have multiple instances of the modals displayed on the same page.
-- [ ] It should contain a header, body, and footer.
-- [ ] The header should include a title.
-- [ ] The body can be anything and the overflow scenarios need to be handled.
-- [ ] The footer should contain two buttons: "Close" and "Save".
-- [ ] The modal should overlay the rest of the page content when active.
-- [ ] The modal should be responsive.
+- [x] The modal should be implemented as a React component and can have multiple instances of the modals displayed on the same page.
+- [x] It should contain a header, body, and footer.
+- [x] The header should include a title.
+- [x] The body can be anything and the overflow scenarios need to be handled.
+- [x] The footer should contain two buttons: "Close" and "Save".
+- [x] The modal should overlay the rest of the page content when active.
+- [x] The modal should be responsive.
 
 ### Behaviour
 
-- [ ] The modal should be initially hidden and only appear when triggered by a button click.
-- [ ] Clicking outside the modal should close it.
-- [ ] The "Close" button should close the modal.
+- [x] The modal should be initially hidden and only appear when triggered by a button click.
+- [x] Clicking outside the modal should close it.
+- [x] The "Close" button should close the modal.
 
 ### Styling
 
-- [ ] The header, body, and footer styles can be extended.
-- [ ] We leave it to your discretion on which tooling to use.
+- The header, body, and footer styles can be extended.
+- We leave it to your discretion on which tooling to use.
 
 ### Testing
 
-- [ ] The codebase should have adequate test coverage.
+- [x] The codebase should have adequate test coverage.
 
 ## What we expect from you
 
@@ -40,8 +40,7 @@ Develop a modal component in ReactJS that meets all necessary accessibility spec
 
 ## What we (mainly) look at when checking out the solution
 
-- Did you follow the instructions, i.e. does your solution
-  work and meet GLS/NXT code challenge requirements?
+- Did you follow the instructions, i.e. does your solution work and meet GLS/NXT code challenge requirements?
 - Is your solution easy to read and understand?
 - Is your solution extensible?
 
