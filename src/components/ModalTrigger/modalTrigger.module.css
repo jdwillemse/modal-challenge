@@ -1,0 +1,7 @@
+.button:not(:first-child) {
+  margin-left: 0.25rem;
+}
+
+.button:not(:last-child) {
+  margin-right: 0.25rem;
+}

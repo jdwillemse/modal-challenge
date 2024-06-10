@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`modalTrigger > should render correctly 1`] = `
+<button
+  class="button"
+  data-modal-id="MODAL_A"
+  type="button"
+>
+  show modal
+</button>
+`;
