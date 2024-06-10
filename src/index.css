@@ -1,11 +1,14 @@
 :root {
+  --color-background: #242424;
+  --color-background-interactive: #131313;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--color-background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -42,7 +45,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--color-background-interactive);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -56,14 +59,12 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
+    --color-background: #ffffff;
+    --color-background-interactive: #dfdfdf;
     color: #213547;
-    background-color: #ffffff;
   }
   a:hover {
     color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
   }
 }
 

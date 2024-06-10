@@ -21,7 +21,7 @@ function App() {
         using native elements the improvements made by user agents is
         automatically conferred
       </p>
-      <div>
+      <div className={css.actionWrapper}>
         <ModalTrigger id={ModalIDs.ModalA}>With form</ModalTrigger>
         <ModalTrigger id={ModalIDs.ModalB}>Long text</ModalTrigger>
       </div>
