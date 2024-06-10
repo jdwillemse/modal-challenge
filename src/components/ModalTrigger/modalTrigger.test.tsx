@@ -14,9 +14,9 @@ describe("modalTrigger", () => {
     });
   }
 
-  test("should render correctly", async () => {
+  test("should render correctly", () => {
     renderModalTrigger();
-    expect(await screen.queryByRole("button")).toMatchSnapshot();
+    expect(screen.queryByRole("button")).toMatchSnapshot();
   });
 
   test("should trigger modal when clicked", async () => {

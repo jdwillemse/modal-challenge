@@ -25,9 +25,9 @@ describe("modalPortal", () => {
     });
   });
 
-  test("should not render when not shown", async () => {
+  test("should not render when not shown", () => {
     renderTestModal();
-    expect(await screen.queryByRole("dialog")).toBeNull();
+    expect(screen.queryByRole("dialog")).toBeNull();
   });
 
   test("should render dialog correctly when called", async () => {

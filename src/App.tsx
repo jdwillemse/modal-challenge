@@ -9,9 +9,9 @@ function App() {
       <h1>Modal Challenge</h1>
       <p>Thanks for taking the time to review this code challenge</p>
       <p>
-        As I was not able to discuss the brief with the stakeholders I've had to
-        interpret the intention behind the wording. With this in mind I did not
-        use semantic <code>header</code>, <code>main</code>, and{" "}
+        As I was not able to discuss the brief with the stakeholders I have had
+        to interpret the intention behind the wording. With this in mind I did
+        not use semantic <code>header</code>, <code>main</code>, and{" "}
         <code>footer</code> elements in the modal as from my research that seems
         to be the incorrect use of those elements.
       </p>

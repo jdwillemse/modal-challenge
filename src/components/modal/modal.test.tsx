@@ -25,7 +25,7 @@ describe("modal", () => {
     expect(screen.queryByRole("dialog")).toBeNull();
   });
 
-  test("should render with simple structure", async () => {
+  test("should render with simple structure", () => {
     render(<ModalElement showModal={true}>Simple modal</ModalElement>, {
       container: document.body,
     });

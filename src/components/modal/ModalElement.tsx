@@ -1,7 +1,7 @@
 import {
   ReactElement,
   ReactNode,
-  SyntheticEvent,
+  MouseEvent,
   useCallback,
   useEffect,
   useRef,
@@ -21,7 +21,7 @@ function ModalElement({ showModal, children }: ModalProps) {
 
   // close the modal when clicking outside of the content area
   const handleDialogClick = useCallback(
-    (event: SyntheticEvent<HTMLElement>) => {
+    (event: MouseEvent<HTMLElement>) => {
       if (event.target === dialogRef.current) {
         closeModal();
       }
@@ -54,21 +54,22 @@ function ModalElement({ showModal, children }: ModalProps) {
     </dialog>
   );
 }
-
+// TODO: figure out how to comply with rule without disabling it
+/* eslint-disable-next-line react/display-name */
 ModalElement.Header = ({ children }: { children: ReactElement }) => (
   <div className={css.header}>
-    <div className={css.titleWrapper} id="modalTitle">
-      {children}
-    </div>
+    <div className={css.titleWrapper}>{children}</div>
   </div>
 );
 
+/* eslint-disable-next-line react/display-name */
 ModalElement.Body = ({
   children,
 }: {
   children: ReactElement | ReactElement[];
 }) => <div className={css.body}>{children}</div>;
 
+/* eslint-disable-next-line react/display-name */
 ModalElement.Footer = ({
   children,
 }: {

@@ -1,11 +1,10 @@
-import { FC, FormEvent, useCallback } from "react";
+import { FormEvent, useCallback } from "react";
 
 import css from "./contentModal.module.css";
-import cssModal from "../Modal/modal.module.css";
 import { Modal } from "../Modal";
 import { ModalIDs, useModalStore } from "../../stores/modalStore";
 
-function ContentModal(): ReturnType<FC> {
+function ContentModal() {
   const { closeModal } = useModalStore.getState();
   const modelB = ModalIDs.ModalB;
   const ModalA = ModalIDs.ModalA;
@@ -24,7 +23,7 @@ function ContentModal(): ReturnType<FC> {
     <>
       <Modal id={ModalA}>
         <Modal.Header>
-          <h2>Semantic Modal</h2>
+          <h2 id="modalTitle">Modal with a form</h2>
         </Modal.Header>
         <Modal.Body>
           <p>
@@ -40,7 +39,7 @@ function ContentModal(): ReturnType<FC> {
           >
             <label>
               <span>Name</span>
-              <input type="text" autoFocus required />
+              <input type="text" required />
             </label>
           </form>
           <p>
@@ -72,13 +71,14 @@ function ContentModal(): ReturnType<FC> {
         </Modal.Footer>
       </Modal>
       <Modal id={modelB}>
-        <div className={cssModal.header}>
-          <h2 className={cssModal.title} id="modalTitle">
-            Long text modal
-          </h2>
-        </div>
-        <div className={cssModal.body}>
-          <p>
+        <Modal.Header>
+          <h2 id="modalTitle">Long text modal</h2>
+        </Modal.Header>
+        <Modal.Body>
+          {/* this paragraph is made focusable otherwise the focus would jump to the 
+          bottom of the modal scrolling the top content out of view */}
+          {/* TODO: fix this behaviour in Firefox */}
+          <p tabIndex={-1}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
             tempus vitae justo in ornare. Duis porta ligula quis lectus pharetra
             posuere. Vestibulum ante ipsum primis in faucibus orci luctus et
@@ -129,18 +129,17 @@ function ContentModal(): ReturnType<FC> {
             tincidunt lacus ullamcorper quis. Nullam facilisis tortor a suscipit
             vulputate.
           </p>
-        </div>
-        <div className={cssModal.footer}>
+        </Modal.Body>
+        <Modal.Footer>
           <button
             type="button"
-            className={(cssModal.button, cssModal.buttonSecondary)}
+            className={(css.button, css.buttonSecondary)}
             onClick={closeModal}
             aria-label="Close Modal"
-            autoFocus
           >
             Close
           </button>
-        </div>
+        </Modal.Footer>
       </Modal>
     </>
   );

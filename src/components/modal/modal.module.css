@@ -18,7 +18,12 @@
   border-bottom: 1px solid;
 }
 
-.title {
+.titleWrapper h1,
+.titleWrapper h2,
+.titleWrapper h3,
+.titleWrapper h4,
+.titleWrapper h5,
+.titleWrapper h6 {
   margin: 0;
 }
 

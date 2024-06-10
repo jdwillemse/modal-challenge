@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest";
 import { useModalStore, ModalIDs } from "./modalStore";
 
 describe("modalStore", () => {
-  test("should have the correct state when called", async () => {
+  test("should have the correct state when called", () => {
     const { openModal, closeModal } = useModalStore.getState();
 
     expect(useModalStore.getState().activeModalID).toBeNull();
