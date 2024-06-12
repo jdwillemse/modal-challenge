@@ -5,7 +5,7 @@ import autoprefixer from "autoprefixer";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/modal-challenge/",
+  base: "./",
   css: {
     postcss: {
       plugins: [autoprefixer({})],
