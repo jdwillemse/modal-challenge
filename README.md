@@ -1,5 +1,7 @@
 # Modal Challenge
 
+[Visit demo](https://jdwillemse.github.com/modal-challenge)
+
 ## Testing
 
 Install dependencies
