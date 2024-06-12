@@ -28,4 +28,9 @@ module.exports = {
     ],
     "react-hooks/exhaustive-deps": ["warn"],
   },
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
 };

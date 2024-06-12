@@ -1,8 +1,8 @@
 import { FormEvent, useCallback } from "react";
 
 import css from "./contentModal.module.css";
-import { Modal } from "../Modal";
-import { ModalIDs, useModalStore } from "../../stores/modalStore";
+import { Modal } from "@components/Modal";
+import { ModalIDs, useModalStore } from "@stores/modalStore";
 
 function ContentModal() {
   const { closeModal } = useModalStore.getState();

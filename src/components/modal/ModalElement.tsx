@@ -8,7 +8,7 @@ import {
 } from "react";
 
 import css from "./modal.module.css";
-import { useModalStore } from "../../stores/modalStore";
+import { useModalStore } from "@stores/modalStore";
 
 export interface ModalProps {
   showModal: boolean;

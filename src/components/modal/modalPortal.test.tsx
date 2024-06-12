@@ -2,7 +2,7 @@ import { describe, expect, test } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 
 import ModalPortal from "./ModalPortal";
-import { useModalStore, ModalIDs } from "../../stores/modalStore";
+import { useModalStore, ModalIDs } from "@stores/modalStore";
 
 describe("modalPortal", () => {
   function renderTestModal() {

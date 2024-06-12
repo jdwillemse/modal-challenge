@@ -1,7 +1,7 @@
 import css from "./app.module.css";
 import { ModalIDs } from "./stores/modalStore";
-import { ContentModal } from "./components/ContentModal";
-import { ModalTrigger } from "./components/ModalTrigger";
+import { ContentModal } from "@components/ContentModal";
+import { ModalTrigger } from "@components/ModalTrigger";
 
 function App() {
   return (

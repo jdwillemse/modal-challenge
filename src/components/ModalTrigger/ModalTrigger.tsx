@@ -1,7 +1,7 @@
 import { ReactElement, MouseEvent, useCallback } from "react";
 
 import css from "./modalTrigger.module.css";
-import { useModalStore, ModalIDs } from "../../stores/modalStore";
+import { useModalStore, ModalIDs } from "@stores/modalStore";
 
 interface ModalTriggerType {
   id: ModalIDs;

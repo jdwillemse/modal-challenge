@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { createPortal } from "react-dom";
 
-import { useModalStore } from "../../stores/modalStore";
+import { useModalStore } from "@stores/modalStore";
 import ModalElement from "./ModalElement";
 
 export interface ModalProps {

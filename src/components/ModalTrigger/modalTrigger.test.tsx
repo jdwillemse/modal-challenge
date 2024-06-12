@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import ModalTrigger from "./ModalTrigger";
-import { useModalStore, ModalIDs } from "../../stores/modalStore";
+import { useModalStore, ModalIDs } from "@stores/modalStore";
 
 describe("modalTrigger", () => {
   const user = userEvent.setup();
