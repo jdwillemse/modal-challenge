@@ -1,6 +1,6 @@
 # Modal Challenge
 
-[Visit demo](https://jdwillemse.github.io/modal-challenge/)
+<!-- [Visit demo](https://jdwillemse.github.io/modal-challenge/) -->
 
 ## Testing
 
